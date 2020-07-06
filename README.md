@@ -6,3 +6,5 @@ in the Jupyter ecosystem.
 * The content is taken from [the Inferential Thinking textbook](https://www.inferentialthinking.com/chapters/intro).
 * The book is built with [jupyter book](https://jupyterbook.org)
 * Interactive computing infrastructure is provided by [the U. Toronto demo hub](https://utoronto.2i2c.cloud)
+* The infrastructure is configured here: https://github.com/2i2c-org/jupyterhub-utoronto/tree/staging/deployments/demohub/image
+* Staging: https://staging.utoronto.2i2c.cloud/

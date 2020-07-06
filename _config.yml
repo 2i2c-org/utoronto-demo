@@ -13,6 +13,14 @@ launch_buttons:
     jupyterhub_url: https://utoronto.2i2c.cloud
 #     jupyterhub_url: https://datahub.berkeley.edu
     binderhub_url: https://mybinder.org
+    notebook_interface: jupyterlab
 
 sphinx:
     extra_extensions: ["sphinx_panels"]
+    
+html:
+  use_edit_page_button      : true  # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
+  use_repository_button     : true  # Whether to add a link to your repository button
+  use_issues_button         : true  # Whether to add an "open an issue" button
+  home_page_in_navbar       : false  # Whether to include your home page in the left Navigation Bar
+                   

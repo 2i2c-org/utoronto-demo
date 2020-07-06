@@ -1,6 +1,7 @@
 - file: intro
 
 - file: data8/Estimation
+  title: Data 8 demo
   sections:
   - file: data8/Percentiles
   - file: data8/Bootstrap
@@ -8,6 +9,7 @@
   - file: data8/Using_Confidence_Intervals
 
 - file: ds100/viz_intro
+  title: Data 100 demo
   sections:
   - file: ds100/viz_quantitative
   - file: ds100/viz_qualitative
