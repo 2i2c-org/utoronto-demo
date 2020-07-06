@@ -1,7 +1,17 @@
 - file: intro
-- file: Estimation
+
+- file: data8/Estimation
   sections:
-  - file: 1/Percentiles
-  - file: 2/Bootstrap
-  - file: 3/Confidence_Intervals
-  - file: 4/Using_Confidence_Intervals
+  - file: data8/Percentiles
+  - file: data8/Bootstrap
+  - file: data8/Confidence_Intervals
+  - file: data8/Using_Confidence_Intervals
+
+- file: ds100/viz_intro
+  sections:
+  - file: ds100/viz_quantitative
+  - file: ds100/viz_qualitative
+  - file: ds100/viz_matplotlib
+  - file: ds100/viz_principles
+  - file: ds100/viz_principles_2
+  - file: ds100/viz_philosophy
