@@ -4,3 +4,4 @@ numpy
 datascience
 pandas
 seaborn
+sphinx-panels
