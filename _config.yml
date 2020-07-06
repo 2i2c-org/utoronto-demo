@@ -1,0 +1,18 @@
+# Book settings
+title: Demo Data-8 Book Chapter
+author:
+logo: logo.png
+
+exclude_patterns: ["README.md"]
+execute:
+    execute_notebooks: off
+    
+repository:
+    url: https://github.com/choldgraf/utoronto-demo
+launch_buttons:
+    jupyterhub_url: https://utoronto.2i2c.cloud
+#     jupyterhub_url: https://datahub.berkeley.edu
+    binderhub_url: https://mybinder.org
+
+sphinx:
+    extra_extensions: ["sphinx_panels"]

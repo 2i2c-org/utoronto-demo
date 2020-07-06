@@ -1,0 +1,7 @@
+- file: intro
+- file: Estimation
+  sections:
+  - file: 1/Percentiles
+  - file: 2/Bootstrap
+  - file: 3/Confidence_Intervals
+  - file: 4/Using_Confidence_Intervals
