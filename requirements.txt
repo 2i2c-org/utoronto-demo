@@ -1,3 +1,6 @@
 jupyter-book
 matplotlib
 numpy
+datascience
+pandas
+seaborn
