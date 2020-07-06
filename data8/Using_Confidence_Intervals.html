@@ -1,0 +1,489 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Using Confidence Intervals &#8212; Demo Data-8 Book Chapter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-dropdown.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.min.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Data Visualization" href="../ds100/viz_intro.html" />
+    <link rel="prev" title="Confidence Intervals" href="Confidence_Intervals.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Demo Data-8 Book Chapter</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="active">
+    <a href="Estimation.html">Data 8 demo</a>
+  <ul class="nav sidenav_l2">
+    <li class="">
+      <a href="Percentiles.html">Percentiles</a>
+    </li>
+    <li class="">
+      <a href="Bootstrap.html">The Bootstrap</a>
+    </li>
+    <li class="">
+      <a href="Confidence_Intervals.html">Confidence Intervals</a>
+    </li>
+    <li class="active">
+      <a href="">Using Confidence Intervals</a>
+    </li>
+  </ul>
+  </li>
+  <li class="">
+    <a href="../ds100/viz_intro.html">Data 100 demo</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/data8/Using_Confidence_Intervals.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/choldgraf/utoronto-demo"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/choldgraf/utoronto-demo/issues/new?title=Issue%20on%20page%20%2Fdata8/Using_Confidence_Intervals.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/choldgraf/utoronto-demo/edit/master/data8/Using_Confidence_Intervals.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/choldgraf/utoronto-demo/master?urlpath=lab/tree/data8/Using_Confidence_Intervals.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://utoronto.2i2c.cloud/hub/user-redirect/git-pull?repo=https://github.com/choldgraf/utoronto-demo&urlpath=lab/tree/utoronto-demo/data8/Using_Confidence_Intervals.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#using-a-confidence-interval-to-test-hypotheses" class="nav-link">Using a Confidence Interval to Test Hypotheses</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#endnote" class="nav-link">Endnote</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+
+<div class="tocsection editthispage">
+    <a href="https://github.com/choldgraf/utoronto-demo/edit/master/data8/Using_Confidence_Intervals.ipynb">
+        <i class="fas fa-pencil-alt"></i> Edit this page
+    </a>
+</div>
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="using-confidence-intervals">
+<h1>Using Confidence Intervals<a class="headerlink" href="#using-confidence-intervals" title="Permalink to this headline">¶</a></h1>
+<p>A confidence interval has a single purpose – to estimate an unknown parameter based on data in a random sample. In the last section, we said that the interval (36%, 42%) was an approximate 95% confidence interval for the percent of smokers among mothers in the population. That was a formal way of saying that by our estimate, the percent of smokers among the mothers in the population was somewhere between 36% and 42%, and that our process of estimation is correct about 95% of the time.</p>
+<p>It is important to resist the impulse to use confidence intervals for other purposes. For example, recall that we calculated the interval (26.9 years, 27.6 years) as an approximate 95% confidence interval for the average age of mothers in the population. A dismayingly common misuse of the interval is to conclude that about 95% of the women were between 26.9 years and 27.6 years old. You don’t need to know much about confidence intervals to see that this can’t be right – you wouldn’t expect 95% of mothers to all be within a few months of each other in age. Indeed, the histogram of the sampled ages shows quite a bit of variation.</p>
+<div class="tip admonition">
+<p class="admonition-title">This week’s lab</p>
+<p>Click below for this week’s lab</p>
+<p><a class="sphinx-bs btn text-wrap btn-outline-primary btn-block reference external" href="https://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=materials/sp20/lab/lab07/lab07.ipynb"><span>Week 07 lab</span></a></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">baby</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="n">path_data</span> <span class="o">+</span> <span class="s1">&#39;baby.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">baby</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;Maternal Age&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Using_Confidence_Intervals_6_0.png" src="../_images/Using_Confidence_Intervals_6_0.png" />
+</div>
+</div>
+<p>A small percent of the sampled ages are in the (26.9, 27.6) interval, and you would expect a similar small percent in the population. The interval just estimates one number: the <em>average</em> of all the ages in the population.</p>
+<p>However, estimating a parameter by confidence intervals does have an important use besides just telling us roughly how big the parameter is.</p>
+<div class="section" id="using-a-confidence-interval-to-test-hypotheses">
+<h2>Using a Confidence Interval to Test Hypotheses<a class="headerlink" href="#using-a-confidence-interval-to-test-hypotheses" title="Permalink to this headline">¶</a></h2>
+<p>Our approximate 95% confidence interval for the average age in the population goes from 26.9 years to 27.6 years. Suppose someone wants to test the following hypotheses:</p>
+<p><strong>Null hypothesis.</strong> The average age in the population is 30 years.</p>
+<p><strong>Alternative hypothesis.</strong> The average age in the population is not 30 years.</p>
+<p>Then, if you were using the 5% cutoff for the P-value, you would reject the null hypothesis. This is because 30 is not in the 95% confidence interval for the population average. At the 5% level of significance, 30 is not a plausible value for the population average.</p>
+<p>This use of confidence intervals is the result of a <em>duality</em> between confidence intervals and tests: if you are testing whether or not the population mean is a particular value <em>x</em>, and you use the 5% cutoff for the P-value, then you will reject the null hypothesis if <em>x</em> is not in your 95% confidence interval for the mean.</p>
+<p>This can be established by statistical theory. In practice, it just boils down to checking whether or not the value specified in the null hypothesis lies in the confidence interval.</p>
+<p>If you were using the 1% cutoff for the P-value, you would have to check if the value specified in the null hypothesis lies in a 99% confidence interval for the population mean.</p>
+<p>To a rough approximation, these statements are also true for population proportions, provided the sample is large.</p>
+<p>While we now have a way of using confidence intervals to test a particular kind of hypothesis, you might wonder about the value of testing whether or not the average age in a population is equal to 30. Indeed, the value isn’t clear. But there are some situations in which a test of this kind of hypothesis is both natural and useful.</p>
+<p>We will study this in the context of data that are a subset of the information gathered in a randomized controlled trial about treatments for Hodgkin’s disease. Hodgkin’s disease is a cancer that typically affects young people. The disease is curable but the treatment can be very harsh. The purpose of the trial was to come up with dosage that would cure the cancer but minimize the adverse effects on the patients.</p>
+<p>This table <code class="docutils literal notranslate"><span class="pre">hodgkins</span></code> contains data on the effect that the treatment had on the lungs of 22 patients. The columns are:</p>
+<ul class="simple">
+<li><p>Height in cm</p></li>
+<li><p>A measure of radiation to the mantle (neck, chest, under arms)</p></li>
+<li><p>A measure of chemotherapy</p></li>
+<li><p>A score of the health of the lungs at baseline, that is, at the start of the treatment; higher scores correspond to more healthy lungs</p></li>
+<li><p>The same score of the health of the lungs, 15 months after treatment</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hodgkins</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="n">path_data</span> <span class="o">+</span> <span class="s1">&#39;hodgkins.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hodgkins</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>height</th> <th>rad</th> <th>chemo</th> <th>base</th> <th>month15</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>164   </td> <td>679 </td> <td>180  </td> <td>160.57</td> <td>87.77  </td>
+        </tr>
+        <tr>
+            <td>168   </td> <td>311 </td> <td>180  </td> <td>98.24 </td> <td>67.62  </td>
+        </tr>
+        <tr>
+            <td>173   </td> <td>388 </td> <td>239  </td> <td>129.04</td> <td>133.33 </td>
+        </tr>
+        <tr>
+            <td>157   </td> <td>370 </td> <td>168  </td> <td>85.41 </td> <td>81.28  </td>
+        </tr>
+        <tr>
+            <td>160   </td> <td>468 </td> <td>151  </td> <td>67.94 </td> <td>79.26  </td>
+        </tr>
+        <tr>
+            <td>170   </td> <td>341 </td> <td>96   </td> <td>150.51</td> <td>80.97  </td>
+        </tr>
+        <tr>
+            <td>163   </td> <td>453 </td> <td>134  </td> <td>129.88</td> <td>69.24  </td>
+        </tr>
+        <tr>
+            <td>175   </td> <td>529 </td> <td>264  </td> <td>87.45 </td> <td>56.48  </td>
+        </tr>
+        <tr>
+            <td>185   </td> <td>392 </td> <td>240  </td> <td>149.84</td> <td>106.99 </td>
+        </tr>
+        <tr>
+            <td>178   </td> <td>479 </td> <td>216  </td> <td>92.24 </td> <td>73.43  </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (12 rows omitted)</p></div></div>
+</div>
+<p>We will compare the baseline and 15-month scores. As each row corresponds to one patient, we say that the sample of baseline scores and the sample of 15-month scores are <em>paired</em> - they are not just two sets of 22 values each, but 22 pairs of values, one for each patient.</p>
+<p>At a glance, you can see that the 15-month scores tend to be lower than the baseline scores – the sampled patients’ lungs seem to be doing worse 15 months after the treatment. This is confirmed by the mostly positive values in the column <code class="docutils literal notranslate"><span class="pre">drop</span></code>, the amount by which the score dropped from baseline to 15 months.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hodgkins</span> <span class="o">=</span> <span class="n">hodgkins</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s1">&#39;drop&#39;</span><span class="p">,</span> <span class="n">hodgkins</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;base&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">hodgkins</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;month15&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hodgkins</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>height</th> <th>rad</th> <th>chemo</th> <th>base</th> <th>month15</th> <th>drop</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>164   </td> <td>679 </td> <td>180  </td> <td>160.57</td> <td>87.77  </td> <td>72.8  </td>
+        </tr>
+        <tr>
+            <td>168   </td> <td>311 </td> <td>180  </td> <td>98.24 </td> <td>67.62  </td> <td>30.62 </td>
+        </tr>
+        <tr>
+            <td>173   </td> <td>388 </td> <td>239  </td> <td>129.04</td> <td>133.33 </td> <td>-4.29 </td>
+        </tr>
+        <tr>
+            <td>157   </td> <td>370 </td> <td>168  </td> <td>85.41 </td> <td>81.28  </td> <td>4.13  </td>
+        </tr>
+        <tr>
+            <td>160   </td> <td>468 </td> <td>151  </td> <td>67.94 </td> <td>79.26  </td> <td>-11.32</td>
+        </tr>
+        <tr>
+            <td>170   </td> <td>341 </td> <td>96   </td> <td>150.51</td> <td>80.97  </td> <td>69.54 </td>
+        </tr>
+        <tr>
+            <td>163   </td> <td>453 </td> <td>134  </td> <td>129.88</td> <td>69.24  </td> <td>60.64 </td>
+        </tr>
+        <tr>
+            <td>175   </td> <td>529 </td> <td>264  </td> <td>87.45 </td> <td>56.48  </td> <td>30.97 </td>
+        </tr>
+        <tr>
+            <td>185   </td> <td>392 </td> <td>240  </td> <td>149.84</td> <td>106.99 </td> <td>42.85 </td>
+        </tr>
+        <tr>
+            <td>178   </td> <td>479 </td> <td>216  </td> <td>92.24 </td> <td>73.43  </td> <td>18.81 </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (12 rows omitted)</p></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hodgkins</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;drop&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Using_Confidence_Intervals_17_0.png" src="../_images/Using_Confidence_Intervals_17_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">hodgkins</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;drop&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>28.615909090909096
+</pre></div>
+</div>
+</div>
+</div>
+<p>But could this be the result of chance variation? It really doesn’t seem so, but the data are from a random sample. Could it be that in the entire population of patients, the average drop is just 0?</p>
+<p>To answer this, we can set up two hypotheses:</p>
+<p><strong>Null hypothesis.</strong> In the population, the average drop is 0.</p>
+<p><strong>Alternative hypothesis.</strong> In the population, the average drop is not 0.</p>
+<p>To test this hypothesis with a 1% cutoff for the P-value, let’s construct an approximate 99% confidence interval for the average drop in the population.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bstrap_means</span> <span class="o">=</span> <span class="n">bootstrap_mean</span><span class="p">(</span><span class="n">hodgkins</span><span class="p">,</span> <span class="s1">&#39;drop&#39;</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+
+<span class="n">left</span> <span class="o">=</span> <span class="n">percentile</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">bstrap_means</span><span class="p">)</span>
+<span class="n">right</span> <span class="o">=</span> <span class="n">percentile</span><span class="p">(</span><span class="mf">99.5</span><span class="p">,</span> <span class="n">bstrap_means</span><span class="p">)</span>
+
+<span class="n">make_array</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([16.83045455, 40.87863636])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">resampled_means</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span>
+    <span class="s1">&#39;Bootstrap Sample Mean&#39;</span><span class="p">,</span> <span class="n">bstrap_means</span>
+<span class="p">)</span>
+<span class="n">resampled_means</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">make_array</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">),</span> <span class="n">make_array</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">8</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Using_Confidence_Intervals_21_0.png" src="../_images/Using_Confidence_Intervals_21_0.png" />
+</div>
+</div>
+<p>The 99% confidence interval for the average drop in the population goes from about 17 to about 40. The interval doesn’t contain 0. So we reject the null hypothesis.</p>
+<p>But notice that we have done better than simply concluding that the average drop in the population isn’t 0. We have estimated how big the average drop is. That’s a more useful result than just saying, “It’s not 0.”</p>
+<p><strong>A note on accuracy.</strong> Our confidence interval is quite wide, for two main reasons:</p>
+<ul class="simple">
+<li><p>The confidence level is high (99%).</p></li>
+<li><p>The sample size is relatively small compared to those in our earlier examples.</p></li>
+</ul>
+<p>In the next chapter, we will examine how the sample size affects accuracy. We will also examine how the empirical distributions of sample means so often come out bell shaped even though the distributions of the underlying data are not bell shaped at all.</p>
+</div>
+<div class="section" id="endnote">
+<h2>Endnote<a class="headerlink" href="#endnote" title="Permalink to this headline">¶</a></h2>
+<p>The terminology of a field usually comes from the leading researchers in that field. <a class="reference external" href="https://en.wikipedia.org/wiki/Bradley_Efron">Brad Efron</a>, who first proposed the bootstrap technique, used a term that has <a class="reference external" href="https://en.wikipedia.org/wiki/Bootstrapping">American origins</a>. Not to be outdone, Chinese statisticians have <a class="reference external" href="http://econpapers.repec.org/article/eeestapro/v_3a37_3ay_3a1998_3ai_3a4_3ap_3a321-329.htm">proposed their own method</a>.</p>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="Confidence_Intervals.html" title="previous page">Confidence Intervals</a>
+    <a class='right-next' id="next-link" href="../ds100/viz_intro.html" title="next page">Data Visualization</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
