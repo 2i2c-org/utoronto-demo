@@ -5,3 +5,4 @@ datascience
 pandas
 seaborn
 sphinx-panels
+okpy
