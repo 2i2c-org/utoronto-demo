@@ -3,7 +3,6 @@ title: Demo Data-8 Book Chapter
 author:
 logo: logo.png
 
-exclude_patterns: ["README.md"]
 execute:
     execute_notebooks: off
     
