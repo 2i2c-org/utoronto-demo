@@ -42,7 +42,7 @@ such as the one below!
 
 ## Infrastructure information
 
-* Interactive computing infrastructure is provided by [the U. Toronto demo hub](https://utoronto.2i2c.cloud)
-* Staging hub is here: https://staging.utoronto.2i2c.cloud/
+* The production hub is at [utoronto.2i2c.cloud](https://utoronto.2i2c.cloud)
+* The staging hub is at: [staging.utoronto.2i2c.cloud](https://staging.utoronto.2i2c.cloud)
 * Deployment and environment information for the hub can be found [in this github repository](https://github.com/2i2c-org/jupyterhub-utoronto/tree/staging/deployments/demohub/image)
 
