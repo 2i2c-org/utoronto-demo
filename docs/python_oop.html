@@ -112,9 +112,6 @@
     <a href="scipy.html">SciPy</a>
   </li>
   <li class="">
-    <a href="numba.html">Numba</a>
-  </li>
-  <li class="">
     <a href="parallelization.html">Parallelization</a>
   </li>
   <li class="">
@@ -167,14 +164,11 @@
     
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../_sources/docs/python_oop.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/docs/python_oop.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/docs/python_oop.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -195,7 +189,7 @@
             href="https://github.com/2i2c-org/utoronto-demo/issues/new?title=Issue%20on%20page%20%2Fdocs/python_oop.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/2i2c-org/utoronto-demo/edit/master/docs/python_oop.md"><button
+        <a class="edit-button" href="https://github.com/2i2c-org/utoronto-demo/edit/master/docs/python_oop.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -214,14 +208,14 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/2i2c-org/utoronto-demo/master?urlpath=tree/docs/python_oop.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/2i2c-org/utoronto-demo/master?urlpath=tree/docs/python_oop.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://utoronto.2i2c.cloud/hub/user-redirect/git-pull?repo=https://github.com/2i2c-org/utoronto-demo&urlpath=tree/utoronto-demo/docs/python_oop.md"><button type="button"
+        <a class="jupyterhub-button" href="https://utoronto.2i2c.cloud/hub/user-redirect/git-pull?repo=https://github.com/2i2c-org/utoronto-demo&urlpath=tree/utoronto-demo/docs/python_oop.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
@@ -333,7 +327,7 @@
 
 
 <div class="tocsection editthispage">
-    <a href="https://github.com/2i2c-org/utoronto-demo/edit/master/docs/python_oop.md">
+    <a href="https://github.com/2i2c-org/utoronto-demo/edit/master/docs/python_oop.ipynb">
         <i class="fas fa-pencil-alt"></i> Edit this page
     </a>
 </div>
@@ -415,6 +409,11 @@ how to sort itself, etc.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[1, 4, 5]
+</pre></div>
+</div>
+</div>
 </div>
 <p>As we now know, <code class="docutils literal notranslate"><span class="pre">sort</span></code> is a function that is “part of” the list object
 — and hence called a <em>method</em>.</p>
@@ -447,6 +446,11 @@ to as <em>attributes</em>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="n">x</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
 <span class="n">x</span><span class="o">.</span><span class="vm">__class__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>list
 </pre></div>
 </div>
 </div>
@@ -552,11 +556,21 @@ automatically.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span><span class="o">.</span><span class="n">earn</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">c1</span><span class="o">.</span><span class="n">spend</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Insufficent funds
 </pre></div>
 </div>
 </div>
@@ -571,10 +585,20 @@ automatically.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span><span class="o">.</span><span class="n">wealth</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>10
 </pre></div>
 </div>
 </div>
@@ -587,10 +611,20 @@ dictionary</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;wealth&#39;: 10}
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c2</span><span class="o">.</span><span class="vm">__dict__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;wealth&#39;: 8}
 </pre></div>
 </div>
 </div>
@@ -640,6 +674,11 @@ reads the class definition</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;__module__&#39;: &#39;__main__&#39;, &#39;__init__&#39;: &lt;function Consumer.__init__ at 0x7f07fce954c0&gt;, &#39;earn&#39;: &lt;function Consumer.earn at 0x7f07fce95820&gt;, &#39;spend&#39;: &lt;function Consumer.spend at 0x7f07fce95670&gt;, &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;Consumer&#39; objects&gt;, &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Consumer&#39; objects&gt;, &#39;__doc__&#39;: None}
+</pre></div>
+</div>
+</div>
 </div>
 <p>Note how the three methods <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, <code class="docutils literal notranslate"><span class="pre">earn</span></code> and <code class="docutils literal notranslate"><span class="pre">spend</span></code> are stored in
 the class object.</p>
@@ -649,6 +688,11 @@ the class object.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span> <span class="o">=</span> <span class="n">Consumer</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">c1</span><span class="o">.</span><span class="n">earn</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">c1</span><span class="o">.</span><span class="n">wealth</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>20
 </pre></div>
 </div>
 </div>
@@ -790,6 +834,9 @@ two different initial conditions.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/python_oop_26_0.png" src="../_images/python_oop_26_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="example-a-market">
@@ -879,10 +926,20 @@ integration—a topic we will say more about later on.)</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>equilibrium price =  18.5
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;consumer surplus = &quot;</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">consumer_surp</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>consumer surplus =  33.0625
 </pre></div>
 </div>
 </div>
@@ -913,6 +970,9 @@ curve together with inverse supply curves with and without taxes</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/python_oop_33_0.png" src="../_images/python_oop_33_0.png" />
+</div>
 </div>
 <p>The next program provides a function that</p>
 <ul class="simple">
@@ -939,6 +999,11 @@ curve together with inverse supply curves with and without taxes</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">baseline_params</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span>
 <span class="n">m</span> <span class="o">=</span> <span class="n">Market</span><span class="p">(</span><span class="o">*</span><span class="n">baseline_params</span><span class="p">)</span>
 <span class="n">deadw</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>  <span class="c1"># Show deadweight loss</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>1.125
 </pre></div>
 </div>
 </div>
@@ -991,6 +1056,11 @@ logistic map</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[0.1, 0.36000000000000004, 0.9216, 0.28901376000000006, 0.8219392261226498]
+</pre></div>
+</div>
+</div>
 </div>
 <p>This piece of code plots a longer trajectory</p>
 <div class="cell docutils container">
@@ -1006,6 +1076,9 @@ logistic map</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/python_oop_43_0.png" src="../_images/python_oop_43_0.png" />
 </div>
 </div>
 <p>The next piece of code provides a bifurcation diagram</p>
@@ -1025,6 +1098,9 @@ logistic map</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/python_oop_45_0.png" src="../_images/python_oop_45_0.png" />
 </div>
 </div>
 <p>On the horizontal axis is the parameter <span class="math notranslate nohighlight">\(r\)</span> in
@@ -1060,6 +1136,11 @@ that this length can be queried via the <code class="docutils literal notranslat
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
 </div>
 <p>If you want to provide a return value for the <code class="docutils literal notranslate"><span class="pre">len</span></code> function when
 applied to your user-defined object, use the <code class="docutils literal notranslate"><span class="pre">__len__</span></code> special method</p>
@@ -1078,6 +1159,11 @@ applied to your user-defined object, use the <code class="docutils literal notra
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>42
 </pre></div>
 </div>
 </div>
@@ -1100,6 +1186,11 @@ functions</p>
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">()</span>
 <span class="n">f</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>  <span class="c1"># Exactly equivalent to f.__call__(8)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>50
 </pre></div>
 </div>
 </div>
@@ -1200,6 +1291,12 @@ with those of its derivative <span class="math notranslate nohighlight">\(p'\)</
 <span class="n">F</span><span class="o">.</span><span class="n">observations</span> <span class="o">=</span> <span class="p">[</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">)]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>0.3
+0.488
 </pre></div>
 </div>
 </div>
