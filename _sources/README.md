@@ -31,7 +31,7 @@ to explore ideas, data, and code.
 Labs are frequently launched via syllabus links or buttons in the content,
 such as the one below!
 
-```{link-button} https://utoronto.2i2c.cloud/hub/user-redirect/git-sync?repo=https://github.com/2i2c-org/utoronto-demo&urlpath=lab/tree/lab/01-The-Neighborhood-fa2019.ipynb
+```{link-button} https://utoronto.2i2c.cloud/hub/user-redirect/git-sync?repo=https://github.com/2i2c-org/utoronto-demo&urlpath=tree/utoronto-demo/lab/01-The-Neighborhood-fa2019.ipynb
 :text: Launch lab
 :classes: btn-outline-primary
 ```
