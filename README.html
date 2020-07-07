@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Pedagogy with Jupyter Notebooks, Jupyter Hub, and Jupyter Book &#8212; Demo Data-8 Book Chapter</title>
+    <title>Pedagogy with Jupyter Notebooks, Jupyter Hub, and Jupyter Book &#8212; Programming for Quantitative Economics</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -33,7 +33,7 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Estimation" href="data8/Estimation.html" />
+    <link rel="next" title="Programming for Quantitative Economics" href="docs/index.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -52,10 +52,10 @@
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="index.html">
   
-  <img src="_static/logo.png" class="logo" alt="logo">
+  <img src="_static/qe-logo-large.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">Demo Data-8 Book Chapter</h1>
+  <h1 class="site-logo" id="site-title">Programming for Quantitative Economics</h1>
   
 </a>
 </div>
@@ -69,10 +69,67 @@
   
   <ul class="nav sidenav_l1">
   <li class="">
-    <a href="data8/Estimation.html">Data 8 demo</a>
+    <a href="docs/index.html">Programming for Quantitative Economics</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Introduction to Python</p>
+</li>
+  <li class="">
+    <a href="docs/about_py.html">About Python</a>
   </li>
   <li class="">
-    <a href="ds100/viz_intro.html">Data 100 demo</a>
+    <a href="docs/getting_started.html">Setting up Your Python Environment</a>
+  </li>
+  <li class="">
+    <a href="docs/python_by_example.html">An Introductory Example</a>
+  </li>
+  <li class="">
+    <a href="docs/functions.html">Functions</a>
+  </li>
+  <li class="">
+    <a href="docs/python_essentials.html">Python Essentials</a>
+  </li>
+  <li class="">
+    <a href="docs/oop_intro.html">OOP I: Introduction to Object Oriented Programming</a>
+  </li>
+  <li class="">
+    <a href="docs/python_oop.html">OOP II: Building Classes</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Scientific Libraries</p>
+</li>
+  <li class="">
+    <a href="docs/need_for_speed.html">Python for Scientific Computing</a>
+  </li>
+  <li class="">
+    <a href="docs/numpy.html">NumPy</a>
+  </li>
+  <li class="">
+    <a href="docs/matplotlib.html">Matplotlib</a>
+  </li>
+  <li class="">
+    <a href="docs/scipy.html">SciPy</a>
+  </li>
+  <li class="">
+    <a href="docs/numba.html">Numba</a>
+  </li>
+  <li class="">
+    <a href="docs/parallelization.html">Parallelization</a>
+  </li>
+  <li class="">
+    <a href="docs/pandas.html">Pandas</a>
+  </li>
+<li class="navbar-special">
+<p class="margin-caption">Advanced Python</p>
+</li>
+  <li class="">
+    <a href="docs/writing_good_code.html">Writing Good Code</a>
+  </li>
+  <li class="">
+    <a href="docs/python_advanced_features.html">More Language Features</a>
+  </li>
+  <li class="">
+    <a href="docs/debugging.html">Debugging</a>
   </li>
 </ul>
 </nav>
@@ -127,14 +184,14 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/choldgraf/utoronto-demo"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/2i2c-org/utoronto-demo"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/choldgraf/utoronto-demo/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/2i2c-org/utoronto-demo/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/choldgraf/utoronto-demo/edit/master/README.md"><button
+        <a class="edit-button" href="https://github.com/2i2c-org/utoronto-demo/edit/master/README.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -162,6 +219,10 @@
         </li>
     
         <li class="nav-item toc-entry toc-h2">
+            <a href="#lab-content" class="nav-link">Lab content</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
             <a href="#infrastructure-information" class="nav-link">Infrastructure information</a>
         </li>
     
@@ -171,7 +232,7 @@
 
 
 <div class="tocsection editthispage">
-    <a href="https://github.com/choldgraf/utoronto-demo/edit/master/README.md">
+    <a href="https://github.com/2i2c-org/utoronto-demo/edit/master/README.md">
         <i class="fas fa-pencil-alt"></i> Edit this page
     </a>
 </div>
@@ -196,10 +257,27 @@ textbooks.</p>
 </div>
 <div class="section" id="book-content-and-website">
 <h2>Book content and website<a class="headerlink" href="#book-content-and-website" title="Permalink to this headline">¶</a></h2>
+<p>Jupyter Books allow you to distribute collections of notebooks in a book-like website.
+They also let you make connections to interactive computing infrastructure (like
+JupyterHub and Binder).</p>
 <ul class="simple">
 <li><p>The repository for this book <a class="reference external" href="https://github.com/2i2c-org/utoronto-demo">is hosted on GitHub</a></p></li>
-<li><p>The content is taken from <a class="reference external" href="https://www.inferentialthinking.com/chapters/intro">the Inferential Thinking textbook</a>.</p></li>
+<li><p>The book content is taken from <a class="reference external" href="https://executablebooks.github.io/quantecon-example/docs/index.html">the QuantEcon textbook</a>.</p></li>
 <li><p>The book is built with <a class="reference external" href="https://jupyterbook.org">jupyter book</a></p></li>
+</ul>
+</div>
+<div class="section" id="lab-content">
+<h2>Lab content<a class="headerlink" href="#lab-content" title="Permalink to this headline">¶</a></h2>
+<p>Labs are useful for providing students more hands-on experience, allowing them
+to explore ideas, data, and code.</p>
+<div class="tip admonition">
+<p class="admonition-title">Launch the lab</p>
+<p>Labs are frequently launched via syllabus links or buttons in the content,
+such as the one below!</p>
+<p><a class="sphinx-bs btn text-wrap btn-outline-primary reference external" href="https://utoronto.2i2c.cloud/hub/user-redirect/git-sync?repo=https://github.com/2i2c-org/utoronto-demo&amp;urlpath=lab/tree/lab/01-The-Neighborhood-fa2019.ipynb"><span>Launch lab</span></a></p>
+</div>
+<ul class="simple">
+<li><p>Lab content is taken from <a class="reference external" href="https://ds-modules.github.io/DS-Modules/">the DS Modules project</a> (<a class="reference external" href="https://github.com/ds-modules/SOC-130AC">sociology module</a>)</p></li>
 </ul>
 </div>
 <div class="section" id="infrastructure-information">
@@ -209,6 +287,12 @@ textbooks.</p>
 <li><p>Staging hub is here: https://staging.utoronto.2i2c.cloud/</p></li>
 <li><p>Deployment and environment information for the hub can be found <a class="reference external" href="https://github.com/2i2c-org/jupyterhub-utoronto/tree/staging/deployments/demohub/image">in this github repository</a></p></li>
 </ul>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -223,12 +307,14 @@ textbooks.</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='right-next' id="next-link" href="data8/Estimation.html" title="next page">Estimation</a>
+    <a class='right-next' id="next-link" href="docs/index.html" title="next page">Programming for Quantitative Economics</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
       <p>
+        
+          By Thomas J. Sargent and John Stachurski<br/>
         
             &copy; Copyright 2020.<br/>
       </p>
