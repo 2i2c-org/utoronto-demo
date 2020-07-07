@@ -13,6 +13,7 @@ textbooks.
 
 ## Book content and website
 
+* The repository for this book [is hosted on GitHub](https://github.com/2i2c-org/utoronto-demo)
 * The content is taken from [the Inferential Thinking textbook](https://www.inferentialthinking.com/chapters/intro).
 * The book is built with [jupyter book](https://jupyterbook.org)
 
