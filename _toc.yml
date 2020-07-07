@@ -15,7 +15,6 @@
 - file: docs/numpy
 - file: docs/matplotlib
 - file: docs/scipy
-- file: docs/numba
 - file: docs/parallelization
 - file: docs/pandas
 
